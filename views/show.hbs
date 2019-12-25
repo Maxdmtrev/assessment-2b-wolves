@@ -1,0 +1,19 @@
+<h1>Party: {{party.name}}</h1>
+
+<span class="">Date past:   {{party.date}}</span>
+<p>Location:   {{party.location}}</p>
+{{#if user}}
+<ul class="no-bullets no-padding mar-t-2">
+  <li class="pipe-separate left">
+    <a href="/channel/edit/{{ party.id }}" class="c-white">edit</a>
+  </li>
+
+  <li class="pipe-separate left">
+    <form method="post" action="/channel/{{party.id}}" class="inline">
+      <input type="hidden" name="_method" class="c-white" value="delete">
+      <input type="submit" value="delete" class="c-white">
+    </form>
+  </li>
+</ul>
+{{else}}
+{{/if}}

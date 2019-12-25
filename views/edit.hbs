@@ -1,0 +1,25 @@
+<h1>Revise your Party</h1>
+
+{{#if errors}}
+    <span>Something went wrong:</span>
+    <ul class="error-list pad-b-2">
+        {{#each errors as |error|}}
+            <li class="error-item">{{error}}</li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+<form method="post" action="/channel/edit/{{party.id}}">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="name-input" class="block mar-b-1">Name:</label>
+  <input id="name-input" name="party_name" type="text" value="{{party.name}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+
+  <label for="party-input" class="block mar-b-1">Location:</label>
+    <input id="party-input" name="party_location" type="text" value="{{party.location}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+
+    <label for="date-input" class="block mar-b-1">Date:</label>
+    <input id="date-input" name="party_date" type="text" value="{{party.date}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+
+  <input type="submit" value="Update" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+</form>

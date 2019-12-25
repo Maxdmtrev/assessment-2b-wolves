@@ -1,0 +1,20 @@
+<h1 class="big">Add a Party</h1>
+
+{{#if error}}
+<section class="errors">
+    <p>{{error}}</p>
+</section>
+{{/if}}
+
+<form id="new-channel-form" class="flex flex-row" method="post" action='/channel/new'>
+    <label for="channel-title" class="sr-only" >Name:</label>
+    <input id="channel-title" class="input-group-input" type="text" name="name" ><br>
+
+    <label for="channel-location" class="sr-only" >Location:</label>
+    <input id="channel-location" class="input-group-input" type="text" name="location" ><br>
+
+    <label for="channel-date" class="sr-only" >Date:</label>
+    <input id="channel-date" class="input-group-input" type="text" name="date" ><br>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>

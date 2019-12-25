@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="/stylesheets/normalize.css">
+      <link rel="stylesheet" href="/stylesheets/application.css">
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <title>Party App</title>
+  </head>
+  <body>
+  <h1>Welcome Potluck Party</h1>
+      <nav class="clearfix mar-b-1">
+          <ul class="no-bullets no-margin no-padding right">
+<!--              <p>{{Onuser}} {{userName}}</p>-->
+              {{#if user}}
+                  <li class="pipe-separate t-light-green left"><a href="/channel">{{user.username}}</a></li>
+                  <li class="pipe-separate t-light-green left"><a href="/logout">logOut</a></li>
+                  <li class="pipe-separate t-light-green left"><a href="/channel">Home</a></li>
+              {{else}}
+                  <li class="pipe-separate t-light-green left"><a href="/login">Login</a></li>
+                  <li class="pipe-separate t-light-green left"><a href="/signup">Signup</a></li>
+                  <li class="pipe-separate t-light-green left"><a href="/">Home</a></li>
+              {{/if}}
+          </ul>
+      </nav>
+  <div class="max-w-700 center">
+    {{{body}}}
+  </div>
+  </body>
+</html>

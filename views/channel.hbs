@@ -1,0 +1,27 @@
+<div class="container-row">
+    <h1 id="input-name">Hi, {{user.username}} ! Welcome to your Party</h1>
+</div>
+<div class="block-button-add-guest">
+{{#if user}}
+    <a href="/channel/new" class="block-button-moderator">Add Party</a>
+    <a href="/find" class="block-button-moderator">Find Party</a>
+    <a href="/new" class="block-button-moderator">Profile</a>
+{{else}}
+    <a href="/find" class="block-button-moderator">Find Party</a>
+{{/if}}
+</div>
+<main role="main">
+    <ul class="entries">
+        {{#each party}}
+            <li class="party" id="{{this.id}}">
+                <span class="party-name"><a href="channel/{{this.id}}">{{this.name}}</a></span><br>
+                <span class="party-location">{{this.location}}</span> ***
+                <span class="party-date">{{this.date}}</span>
+                <span class="party-status">{{this.status}}</span>
+            </li>
+        {{/each}}
+    </ul>
+</main>
+
+
+
